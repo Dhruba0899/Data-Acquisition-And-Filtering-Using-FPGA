@@ -2,16 +2,20 @@
 
 Interfaced PMOD light and pressure sensors with a Zynq-7000 series FPGA via the SPI protocol and designed a Kalman Filter and Median Filter using Verilog on Xilinx Vivado to filter noise from sensor data. Utilized a Virtual I/O module to compare filtered vs raw sensor data.
 
----
+----
 
 # Kalman Filter 
 
-<img width="594" height="478" alt="image" src="https://github.com/user-attachments/assets/306b544f-af8f-4e25-98bf-ed0fceb4ff10" />
+<img width="604" height="471" alt="image" src="https://github.com/user-attachments/assets/fda7b6cc-c227-45f6-88c2-0cacb236129c" />
+
 
 - The designed Kalman filter is a one dimensional scalar filter used to filter 8-bit input data from the PMOD ALS.
 - The filter is based on two steps, a prediction step and a correction step. We first predict a value of the output and calculate the difference between it and the actual light data scaling it by the Kalman gain to calculate  the final output.
 - The values of Q (process noise) and R (measurement noise ) tell the filter how much it should trust the prediction vs the sensor measurement.
 - Based on the error between the prediction and the sensor data the Kalman gain and covariance are set and the output is corrected.
+
+
+
 
 # Simulation Waveform (with SPI)
 
@@ -24,6 +28,8 @@ Interfaced PMOD light and pressure sensors with a Zynq-7000 series FPGA via the 
 # Filter Response (Graphed) 
 
 <img width="1025" height="530" alt="image" src="https://github.com/user-attachments/assets/bd6f6088-ae4a-4da0-b432-cf6fbe01d6c9" />
+
+---
 
 # Median Filter 
 
